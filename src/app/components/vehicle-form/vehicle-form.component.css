@@ -1,0 +1,91 @@
+.error-message {
+  border: 1px solid #f5c6cb;
+  background-color: #f8d7da;
+  color: #721c24;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 4px;
+}
+
+.loading-spinner {
+  padding: 20px;
+  text-align: center;
+  font-style: italic;
+  color: #555;
+}
+
+/* Agrupa label + input + error */
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block; /* Label arriba del input */
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+input[type="text"] {
+  width: 100%;      /* Ocupa todo el ancho disponible */
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+input[type="text"]:focus {
+  border-color: #007bff; /* Resaltar al enfocar */
+  outline: none; /* Quita el borde por defecto del navegador */
+}
+
+/* Estilo simple para inválido */
+input.input-invalid {
+  border-color: #dc3545; /* Borde rojo */
+}
+
+.error-text {
+  color: #dc3545; /* Texto rojo */
+  font-size: 0.85em; /* Más pequeño */
+  margin-top: 4px;
+}
+
+/* Contenedor de botones */
+.form-actions {
+  margin-top: 25px;
+  text-align: right; /* Alinea botones a la derecha */
+}
+
+/* Botones del formulario */
+.form-actions button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  cursor: pointer;
+}
+
+.submit-button {
+  background-color: #28a745; /* Verde */
+}
+.submit-button:hover:not(:disabled) {
+  background-color: #218838;
+}
+
+.cancel-button {
+  background-color: #6c757d; /* Gris */
+  margin-left: 10px; /* Espacio entre cancelar y guardar */
+}
+.cancel-button:hover {
+  background-color: #5a6268;
+}
+
+.submit-button:disabled {
+   background-color: #96d3a4; /* Verde más claro cuando está deshabilitado */
+   cursor: not-allowed;
+}
+
+/* Inputs deshabilitados (si aplica) */
+input:disabled {
+  background-color: #e9ecef;
+  cursor: not-allowed;
+}

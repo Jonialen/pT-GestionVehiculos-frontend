@@ -1,0 +1,63 @@
+<h2>{{ esEdicion ? 'Editar Vehículo' : 'Añadir Nuevo Vehículo' }}</h2>
+
+<div *ngIf="mensajeError" class="error-message"> {{ mensajeError }}
+</div>
+
+<div *ngIf="isLoading" class="loading-spinner"> Cargando... </div>
+
+<form [formGroup]="vehicleForm" (ngSubmit)="onSubmit()" *ngIf="!isLoading" novalidate>
+
+  <div class="form-group"> <label for="placa">Placa:</label>
+    <input type="text" id="placa" formControlName="placa"
+           [class.input-invalid]="placa?.invalid && (placa?.dirty || placa?.touched)">
+    <div class="error-text" *ngIf="placa?.invalid && (placa?.dirty || placa?.touched)"> <div *ngIf="placa?.errors?.['required']">Requerido.</div>
+      <div *ngIf="placa?.errors?.['minlength']">Mín. 6 chars.</div>
+      <div *ngIf="placa?.errors?.['maxlength']">Máx. 10 chars.</div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="marca">Marca:</label>
+    <input type="text" id="marca" formControlName="marca"
+           [class.input-invalid]="marca?.invalid && (marca?.dirty || marca?.touched)">
+    <div class="error-text" *ngIf="marca?.invalid && (marca?.dirty || marca?.touched)">
+        Requerido.
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="modelo">Modelo:</label>
+    <input type="text" id="modelo" formControlName="modelo"
+           [class.input-invalid]="modelo?.invalid && (modelo?.dirty || modelo?.touched)">
+     <div class="error-text" *ngIf="modelo?.invalid && (modelo?.dirty || modelo?.touched)">
+        Requerido.
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="serie">Serie:</label>
+    <input type="text" id="serie" formControlName="serie"
+           [class.input-invalid]="serie?.invalid && (serie?.dirty || serie?.touched)">
+     <div class="error-text" *ngIf="serie?.invalid && (serie?.dirty || serie?.touched)">
+        Requerido.
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="color">Color:</label>
+    <input type="text" id="color" formControlName="color"
+           [class.input-invalid]="color?.invalid && (color?.dirty || color?.touched)">
+     <div class="error-text" *ngIf="color?.invalid && (color?.dirty || color?.touched)">
+        Requerido.
+    </div>
+  </div>
+
+  <div class="form-actions"> <button type="submit" class="submit-button" [disabled]="vehicleForm.invalid || isLoading">
+      {{ esEdicion ? 'Actualizar' : 'Guardar' }}
+    </button>
+    <button type="button" (click)="cancelar()" class="cancel-button">
+      Cancelar
+    </button>
+  </div>
+
+</form>

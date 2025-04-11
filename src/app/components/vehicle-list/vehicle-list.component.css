@@ -1,0 +1,64 @@
+/* Botón principal */
+.add-button {
+  background-color: #2a75d4; /* Azul */
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  margin-bottom: 20px; /* Espacio debajo */
+  cursor: pointer;
+}
+.add-button:hover {
+  background-color: #205a9e;
+}
+
+/* Tabla básica */
+table {
+  width: 100%;
+  border-collapse: collapse; /* Une los bordes */
+  margin-bottom: 1rem;
+}
+
+th, td {
+  border: 1px solid #ccc; /* Bordes simples */
+  padding: 8px;         /* Espaciado interno */
+  text-align: left;
+}
+
+th {
+  background-color: #f0f0f0; /* Fondo gris claro para cabecera */
+}
+
+/* Botones de acción */
+td button { /* Estilo base para botones dentro de celdas */
+  padding: 5px 10px;
+  border-radius: 3px;
+  border: none;
+  color: white;
+  cursor: pointer;
+  margin-right: 5px; /* Espacio entre botones */
+}
+
+.edit-button {
+  background-color: #ffc107; /* Amarillo */
+  color: #333;
+}
+.edit-button:hover {
+  background-color: #e0a800;
+}
+
+.delete-button {
+  background-color: #dc3545; /* Rojo */
+}
+.delete-button:hover {
+  background-color: #c82333;
+}
+
+/* Mensaje cuando no hay vehículos */
+.info-message {
+  border: 1px solid #b8daff;
+  background-color: #cfe2ff;
+  color: #0c5460;
+  padding: 15px;
+  border-radius: 4px;
+}
