@@ -1,61 +1,67 @@
 <h2>{{ esEdicion ? 'Editar Vehículo' : 'Añadir Nuevo Vehículo' }}</h2>
 
-<div *ngIf="mensajeError" class="error-message"> {{ mensajeError }}
+<div *ngIf="mensajeError" class="alert alert-danger">
+  {{ mensajeError }}
 </div>
 
-<div *ngIf="isLoading" class="loading-spinner"> Cargando... </div>
+<div *ngIf="isLoading" class="spinner-border text-primary" role="status">
+  <span class="visually-hidden">Cargando...</span>
+</div>
 
-<form [formGroup]="vehicleForm" (ngSubmit)="onSubmit()" *ngIf="!isLoading" novalidate>
+<form [formGroup]="vehicleForm" (ngSubmit)="onSubmit()" *ngIf="!isLoading">
 
-  <div class="form-group"> <label for="placa">Placa:</label>
-    <input type="text" id="placa" formControlName="placa"
-           [class.input-invalid]="placa?.invalid && (placa?.dirty || placa?.touched)">
-    <div class="error-text" *ngIf="placa?.invalid && (placa?.dirty || placa?.touched)"> <div *ngIf="placa?.errors?.['required']">Requerido.</div>
-      <div *ngIf="placa?.errors?.['minlength']">Mín. 6 chars.</div>
-      <div *ngIf="placa?.errors?.['maxlength']">Máx. 10 chars.</div>
+  <div class="mb-3">
+    <label for="placa" class="form-label">Placa:</label>
+    <input type="text" id="placa" formControlName="placa" class="form-control"
+           [ngClass]="{'is-invalid': placa?.invalid && (placa?.dirty || placa?.touched)}">
+    <div *ngIf="placa?.invalid && (placa?.dirty || placa?.touched)" class="invalid-feedback">
+      <div *ngIf="placa?.errors?.['required']">La placa es requerida.</div>
+      <div *ngIf="placa?.errors?.['minlength']">La placa debe tener al menos 6 caracteres.</div>
+      <div *ngIf="placa?.errors?.['maxlength']">La placa no debe exceder los 10 caracteres.</div>
     </div>
   </div>
 
-  <div class="form-group">
-    <label for="marca">Marca:</label>
-    <input type="text" id="marca" formControlName="marca"
-           [class.input-invalid]="marca?.invalid && (marca?.dirty || marca?.touched)">
-    <div class="error-text" *ngIf="marca?.invalid && (marca?.dirty || marca?.touched)">
-        Requerido.
+  <div class="mb-3">
+    <label for="marca" class="form-label">Marca:</label>
+    <input type="text" id="marca" formControlName="marca" class="form-control"
+           [ngClass]="{'is-invalid': marca?.invalid && (marca?.dirty || marca?.touched)}">
+    <div *ngIf="marca?.invalid && (marca?.dirty || marca?.touched)" class="invalid-feedback">
+      <div *ngIf="marca?.errors?.['required']">La marca es requerida.</div>
     </div>
   </div>
 
-  <div class="form-group">
-    <label for="modelo">Modelo:</label>
-    <input type="text" id="modelo" formControlName="modelo"
-           [class.input-invalid]="modelo?.invalid && (modelo?.dirty || modelo?.touched)">
-     <div class="error-text" *ngIf="modelo?.invalid && (modelo?.dirty || modelo?.touched)">
-        Requerido.
+  <div class="mb-3">
+    <label for="modelo" class="form-label">Modelo:</label>
+    <input type="text" id="modelo" formControlName="modelo" class="form-control"
+           [ngClass]="{'is-invalid': modelo?.invalid && (modelo?.dirty || modelo?.touched)}">
+    <div *ngIf="modelo?.invalid && (modelo?.dirty || modelo?.touched)" class="invalid-feedback">
+      <div *ngIf="modelo?.errors?.['required']">El modelo es requerido.</div>
     </div>
   </div>
 
-  <div class="form-group">
-    <label for="serie">Serie:</label>
-    <input type="text" id="serie" formControlName="serie"
-           [class.input-invalid]="serie?.invalid && (serie?.dirty || serie?.touched)">
-     <div class="error-text" *ngIf="serie?.invalid && (serie?.dirty || serie?.touched)">
-        Requerido.
+  <div class="mb-3">
+    <label for="serie" class="form-label">Serie:</label>
+    <input type="text" id="serie" formControlName="serie" class="form-control"
+           [ngClass]="{'is-invalid': serie?.invalid && (serie?.dirty || serie?.touched)}">
+    <div *ngIf="serie?.invalid && (serie?.dirty || serie?.touched)" class="invalid-feedback">
+      <div *ngIf="serie?.errors?.['required']">La serie es requerida.</div>
     </div>
   </div>
 
-  <div class="form-group">
-    <label for="color">Color:</label>
-    <input type="text" id="color" formControlName="color"
-           [class.input-invalid]="color?.invalid && (color?.dirty || color?.touched)">
-     <div class="error-text" *ngIf="color?.invalid && (color?.dirty || color?.touched)">
-        Requerido.
+  <div class="mb-3">
+    <label for="color" class="form-label">Color:</label>
+    <input type="text" id="color" formControlName="color" class="form-control"
+           [ngClass]="{'is-invalid': color?.invalid && (color?.dirty || color?.touched)}">
+    <div *ngIf="color?.invalid && (color?.dirty || color?.touched)" class="invalid-feedback">
+      <div *ngIf="color?.errors?.['required']">El color es requerido.</div>
     </div>
   </div>
 
-  <div class="form-actions"> <button type="submit" class="submit-button" [disabled]="vehicleForm.invalid || isLoading">
+  <div class="mt-4">
+    <button type="submit" class="btn btn-success me-2" [disabled]="vehicleForm.invalid || isLoading">
       {{ esEdicion ? 'Actualizar' : 'Guardar' }}
     </button>
-    <button type="button" (click)="cancelar()" class="cancel-button">
+    <button type="button" (click)="cancelar()" class="btn btn-secondary">
       Cancelar
     </button>
   </div>
