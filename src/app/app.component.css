@@ -1,0 +1,40 @@
+.app-container {
+  background-color: white;
+  border-radius: var(--border-radius);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: var(--spacing-lg);
+  margin-bottom: var(--spacing-lg);
+}
+
+.app-header {
+  border-bottom: 3px solid var(--primary);
+  padding-bottom: var(--spacing-md);
+  margin-bottom: var(--spacing-lg);
+}
+
+nav {
+  margin: var(--spacing-md) 0;
+}
+
+nav a {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: var(--primary);
+  color: white;
+  border-radius: var(--border-radius);
+  margin-right: var(--spacing-md);
+  font-weight: 500;
+}
+
+nav a:hover {
+  background-color: var(--secondary);
+  text-decoration: none;
+}
+
+hr {
+  border: 0;
+  height: 1px;
+  background-color: #e0e0e0;
+  margin: var(--spacing-lg) 0;
+}
+

@@ -2,7 +2,7 @@ import { Component, OnInit, inject } from '@angular/core'; // Importa OnInit y i
 import { CommonModule } from '@angular/common'; // Necesario para *ngFor, etc.
 import { Router, RouterModule } from '@angular/router'; // Necesario para routerLink y navegación
 import { VehicleService } from '../../services/vehicle.service'; // Importa tu servicio
-import { Vehiculo } from '../../models/vehiculo.model'; // Importa tu modelo
+import { Vehiculo } from '../../models/vehiculo.model';
 
 @Component({
   selector: 'app-vehicle-list',

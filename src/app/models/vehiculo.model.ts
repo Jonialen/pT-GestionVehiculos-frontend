@@ -1,5 +1,3 @@
-// src/app/models/vehiculo.model.ts
-
 export interface Vehiculo {
   placa: string;
   marca: string;

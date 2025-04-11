@@ -1,34 +1,40 @@
-<h2>Lista de Vehículos</h2>
+<div class="list-container">
+  <h2>Lista de Vehículos</h2>
 
-<button (click)="irANuevoVehiculo()" class="add-button"> Añadir Nuevo Vehículo
-</button>
+  <button (click)="irANuevoVehiculo()" class="add-button">
+    Añadir Nuevo Vehículo
+  </button>
 
-<div *ngIf="vehiculos.length > 0; else noVehiculos">
-  <table>
-    <thead>
-      <tr>
-        <th>Placa</th>
-        <th>Marca</th>
-        <th>Modelo</th>
-        <th>Serie</th>
-        <th>Color</th>
-        <th>Acciones</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let vehiculo of vehiculos">
-        <td>{{ vehiculo.placa }}</td>
-        <td>{{ vehiculo.marca }}</td>
-        <td>{{ vehiculo.modelo }}</td>
-        <td>{{ vehiculo.serie }}</td>
-        <td>{{ vehiculo.color }}</td>
-        <td> <button (click)="editarVehiculo(vehiculo.placa)" class="edit-button">Editar</button>
-          <button (click)="eliminarVehiculo(vehiculo.placa)" class="delete-button">Eliminar</button>
-        </td>
-      </tr>
-    </tbody>
-  </table>
+  <div *ngIf="vehiculos.length > 0; else noVehiculos">
+    <table>
+      <thead>
+        <tr>
+          <th>Placa</th>
+          <th>Marca</th>
+          <th>Modelo</th>
+          <th>Serie</th>
+          <th>Color</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let vehiculo of vehiculos">
+          <td>{{ vehiculo.placa }}</td>
+          <td>{{ vehiculo.marca }}</td>
+          <td>{{ vehiculo.modelo }}</td>
+          <td>{{ vehiculo.serie }}</td>
+          <td>{{ vehiculo.color }}</td>
+          <td>
+            <button (click)="editarVehiculo(vehiculo.placa)" class="edit-button">Editar</button>
+            <button (click)="eliminarVehiculo(vehiculo.placa)" class="delete-button">Eliminar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <ng-template #noVehiculos>
+    <p class="info-message">No hay vehículos registrados.</p>
+  </ng-template>
 </div>
 
-<ng-template #noVehiculos>
-  <p class="info-message">No hay vehículos registrados.</p> </ng-template>

@@ -1,20 +1,78 @@
-/* src/styles.css */
+:root {
+  --primary: #4361ee;
+  --secondary: #3f37c9;
+  --success: #4cc9f0;
+  --danger: #d60f2d;
+  --warning: #f8961e;
+  --light: #f8f9fa;
+  --dark: #212529;
+  --gray: #adb5bd;
+
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --border-radius: 8px;
+}
+
 * {
-  box-sizing: border-box; /* Evita problemas con padding/border */
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-  font-family: sans-serif; /* Fuente básica */
-  padding: 15px;
-  color: #333;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: var(--dark);
+  background-color: #f5f5f5;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-/* Añade un poco de espacio debajo de los títulos h2 por defecto */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-bottom: var(--spacing-md);
+  color: var(--dark);
+}
+
+h1 {
+  font-size: 2rem;
+  color: var(--primary);
+  margin-bottom: var(--spacing-lg);
+}
+
 h2 {
-  margin-bottom: 1em;
+  font-size: 1.5rem;
+  color: var(--secondary);
+  margin-bottom: var(--spacing-md);
 }
 
-/* Espacio básico debajo de los párrafos */
 p {
-  margin-bottom: 1em;
+  margin-bottom: var(--spacing-md);
 }
+
+a {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+button {
+  cursor: pointer;
+  font-family: inherit;
+}
+
+@media (max-width: 768px) {
+  body {
+    padding: 15px;
+  }
+}
+
